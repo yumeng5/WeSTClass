@@ -1,5 +1,4 @@
 numpy
-scipy
 nltk
 gensim
 sklearn
