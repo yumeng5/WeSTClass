@@ -4,3 +4,4 @@ nltk
 gensim
 sklearn
 keras
+spherecluster
