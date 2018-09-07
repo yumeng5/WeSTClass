@@ -3,7 +3,6 @@ import numpy as np
 import os
 import re
 import itertools
-import pickle
 from collections import Counter
 from os.path import join
 from nltk import tokenize
