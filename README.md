@@ -25,11 +25,24 @@ An example run is provided in ```test.sh```, which can be executed by
 More advanced settings on training and hyperparameters are commented in ```main.py```.
 
 ## Inputs
+
 The weak supervision sources ```${sup_source}``` can come from any of the following:
 * Label surface names (```labels```); you need to provide class names for each class in ```./${dataset}/classes.txt```, where each line begins with the class id (starting from ```0```), followed by a colon, and then the class label surface name. 
 * Class-related keywords (```keywords```); you need to provide class-related keywords for each class in ```./${dataset}/keywords.txt```, where each line begins with the class id (starting from ```0```), followed by a colon, and then the class-related keywords separated by commas. 
 * Labeled documents (```docs```); you need to provide labeled document ids for each class in ```./${dataset}/doc_id.txt```, where each line begins with the class id (starting from ```0```), followed by a colon, and then document ids in the corpus (starting from ```0```) of the corresponding class separated by commas. 
 
 Examples are given under ```./agnews/``` and ```./yelp/```.
+
+## Outputs
+
+The final results (document labels) will be written in ```./${dataset}/output.txt```, where each line is the class label id for the corresponding document.
+
+Intermediate results (e.g. trained network weights, self-training logs) will be saved under ```./results/${dataset}/${model}/```.
+
+## Running on a New Dataset
+
+To execute the code on a new dataset, you need to 
+
+1. Create a directory named ${dataset}
 
 ## Citations
