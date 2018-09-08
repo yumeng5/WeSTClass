@@ -26,10 +26,10 @@ More advanced settings on training and hyperparameters are commented in ```main.
 
 ## Inputs
 The weak supervision sources ```${sup_source}``` can come from any of the following:
-* Label surface names (```labels```); you need to provide class names for each class in ```/${dataset}/classes.txt```, where 
-* Class-related keywords (```keywords```);
-* Labeled documents (```docs```);
+* Label surface names (```labels```); you need to provide class names for each class in ```./${dataset}/classes.txt```, where each line begins with the class id (starting from ```0```), followed by a colon, and then the class label surface name. 
+* Class-related keywords (```keywords```); you need to provide class-related keywords for each class in ```./${dataset}/keywords.txt```, where each line begins with the class id (starting from ```0```), followed by a colon, and then the class-related keywords separated by commas. 
+* Labeled documents (```docs```); you need to provide labeled document ids for each class in ```./${dataset}/doc_id.txt```, where each line begins with the class id (starting from ```0```), followed by a colon, and then document ids in the corpus (starting from ```0```) of the corresponding class separated by commas. 
 
-
+Examples are given under ```./agnews/``` and ```./yelp/```.
 
 ## Citations
