@@ -35,7 +35,7 @@ Examples are given under ```./agnews/``` and ```./yelp/```.
 
 ## Outputs
 
-The final results (document labels) will be written in ```./${dataset}/output.txt```, where each line is the class label id for the corresponding document.
+The final results (document labels) will be written in ```./${dataset}/out.txt```, where each line is the class label id for the corresponding document.
 
 Intermediate results (e.g. trained network weights, self-training logs) will be saved under ```./results/${dataset}/${model}/```.
 
@@ -43,6 +43,11 @@ Intermediate results (e.g. trained network weights, self-training logs) will be 
 
 To execute the code on a new dataset, you need to 
 
-1. Create a directory named ${dataset}
+1. Create a directory named ```${dataset}```.
+2. Put raw corpus (with or without true labels) under ```./${dataset}```.
+3. Modify the function ```read_file``` in ```load_data.py``` so that it returns a list of documents in variable ```data```, and corresponding true labels in variable ```y``` (If ground truth labels are not available, simply return ```y = None```).
+4. Modify ```main.py``` to accept the new dataset; you need to add ```${dataset}``` to argparse, and then specify parameter settings (e.g. ```update_interval```, ```pretrain_epochs```) for the new dataset.
+
+You can always refer to the example datasets when adapting the code for a new dataset.
 
 ## Citations
