@@ -201,7 +201,7 @@ if __name__ == "__main__":
         seed_docs, seed_label = pseudodocs(word_sup_array, gamma, background_array,
                                            sequence_length, len_avg, len_std, beta, alpha, 
                                            vocabulary_inv, embedding_mat, args.model, 
-                                           './results/{}/phase1/{}/'.format(args.model, args.dataset))
+                                           './results/{}/{}/phase1/'.format(args.dataset, args.model))
         
         if args.sup_source == 'docs':
             if args.model == 'cnn':
@@ -221,7 +221,7 @@ if __name__ == "__main__":
         wstc.pretrain(x=seed_docs, pretrain_labels=seed_label,
                      sup_idx=sup_idx, optimizer=SGD(lr=0.1, momentum=0.9),
                      epochs=pretrain_epochs, batch_size=args.batch_size,
-                     save_dir='./results/{}/phase2'.format(args.model))
+                     save_dir='./results/{}/{}/phase2'.format(args.dataset, args.model))
 
         y_pred = wstc.predict(x)
         if y is not None:
@@ -233,7 +233,7 @@ if __name__ == "__main__":
         selftrain_optimizer = SGD(lr=self_lr, momentum=0.9, decay=decay)
         wstc.compile(optimizer=selftrain_optimizer, loss='kld')
         y_pred = wstc.fit(x, y=y, tol=delta, maxiter=args.maxiter, batch_size=args.batch_size,
-                         update_interval=update_interval, save_dir='./results/{}/phase3'.format(args.model), 
+                         update_interval=update_interval, save_dir='./results/{}/{}/phase3'.format(args.dataset, args.model), 
                          save_suffix=args.dataset+'_'+str(args.sup_source))
         print('Self-training time: {:.2f}s'.format(time() - t0))
 
