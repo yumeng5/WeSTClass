@@ -2,7 +2,7 @@
 
 The source code used for Weakly-Supervised Neural Text Classification, published in CIKM 2018.
 
-## Requirments
+## Requirements
 
 Before running, you need to first install the required packages by typing following commands:
 
@@ -10,7 +10,7 @@ Before running, you need to first install the required packages by typing follow
 $ pip3 install -r requirements.txt
 ```
 
-## Running
+## Quick Start
 
 ```
 python main.py --dataset ${dataset} --sup_source ${sup_source} --model ${model}
