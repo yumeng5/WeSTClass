@@ -51,3 +51,15 @@ To execute the code on a new dataset, you need to
 You can always refer to the example datasets when adapting the code for a new dataset.
 
 ## Citations
+
+Please cite the following paper if you find the code helpful for your research.
+```
+@inproceedings{meng2018weakly,
+  title={Weakly-Supervised Neural Text Classification},
+  author={Meng, Yu and Shen, Jiaming and Zhang, Chao and Han, Jiawei},
+  booktitle={Proceedings of the 27th ACM International Conference on Information and Knowledge Management},
+  pages={983--992},
+  year={2018},
+  organization={ACM}
+}
+```
