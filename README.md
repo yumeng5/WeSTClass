@@ -10,6 +10,8 @@ Before running, you need to first install the required packages by typing follow
 $ pip3 install -r requirements.txt
 ```
 
+Python 3.6 is strongly recommended; using older python versions might lead to package incompatibility issues.
+
 ## Quick Start
 
 ```
